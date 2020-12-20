@@ -6,13 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="onedrive (1)" />
         <module name="onedrive" />
+        <module name="onedrive (1)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="onedrive" target="1.5" />
-      <module name="onedrive (1)" target="1.8" />
+      <module name="onedrive (1)" target="1.5" />
       <module name="onedrive (2)" target="1.5" />
     </bytecodeTargetLevel>
   </component>
