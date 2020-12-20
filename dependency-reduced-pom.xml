@@ -159,6 +159,8 @@
     </dependencies>
   </dependencyManagement>
   <properties>
+    <dropwizard.metrics.version>3.0.2</dropwizard.metrics.version>
+    <ws.version>2.1.1</ws.version>
     <dropwizard.version>2.0.17</dropwizard.version>
     <mainClass>onedrive.onedriveApplication</mainClass>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
