@@ -13,15 +13,13 @@ import onedrive.api.Ping
 @Path("/hello-world")
 @Produces(MediaType.APPLICATION_JSON)
 class HelloWorldResource(private val template: String, private val defaultName: String) {
-    private val counter: AtomicLong
+    private val counter: AtomicLong = AtomicLong()
+
     @GET
     @Timed
-    fun sayHello(@QueryParam("name") name: Optional<String?>): onedrive.api.Ping {
+    fun sayHello(@QueryParam("name") name: Optional<String?>): Ping {
         val value = String.format(template, name.orElse(defaultName))
         return Ping(counter.incrementAndGet(), value)
     }
 
-    init {
-        counter = AtomicLong()
-    }
 }
