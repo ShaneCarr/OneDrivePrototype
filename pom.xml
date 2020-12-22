@@ -19,6 +19,7 @@
         <kotlin.code.style>official</kotlin.code.style>
         <dropwizard.metrics.version>3.0.2</dropwizard.metrics.version>
         <ws.version>2.1.1</ws.version>
+        <jackson.annotations>2.11.0</jackson.annotations>
         <mainClass>onedrive.onedriveApplication</mainClass>
     </properties>
 
@@ -48,6 +49,7 @@
                 <artifactId>dropwizard-dependencies</artifactId>
                 <type>pom</type>
                 <scope>import</scope>
+                <version>${dropwizard.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.codahale.metrics</groupId>
@@ -71,6 +73,7 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.annotations}</version>
             </dependency>
             <dependency>
                 <groupId>jakarta.validation</groupId>
@@ -86,6 +89,36 @@
     </dependencyManagement>
     <dependencies>
 
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.codahale.metrics</groupId>
+            <artifactId>metrics-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-core</artifactId>
+        </dependency>
+
+        <!--java libs -->
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+        </dependency>
+
+        <!-- general-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -149,7 +182,6 @@
                             <sourceDirs>
                                 <source>src/main/kotlin</source>
                                 <source>src/main/java</source>
-                                <testSourceDirectory>src/test/kotlin</testSourceDirectory>
                             </sourceDirs>
                         </configuration>
                     </execution>
@@ -166,6 +198,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
                 <executions>
                     <execution>
                         <id>default-compile</id>
