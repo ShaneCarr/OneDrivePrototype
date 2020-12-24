@@ -1,6 +1,6 @@
 package onedrive
 
-class onedriveApplication : io.dropwizard.Application<onedriveConfiguration>() {
+class OnedriveApplication : io.dropwizard.Application<onedriveConfiguration>() {
 
     override fun initialize(bootstrap: io.dropwizard.setup.Bootstrap<onedriveConfiguration>) {
         // TODO: application initialization
@@ -17,7 +17,7 @@ class onedriveApplication : io.dropwizard.Application<onedriveConfiguration>() {
         @kotlin.Throws(Exception::class)
         @kotlin.jvm.JvmStatic
         fun main(args: Array<String>) {
-            onedriveApplication().run(*args)
+            OnedriveApplication().run(*args)
         }
     }
 }
