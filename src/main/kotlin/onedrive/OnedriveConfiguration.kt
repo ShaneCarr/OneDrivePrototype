@@ -1,4 +1,5 @@
 package onedrive
 
-class onedriveConfiguration : io.dropwizard.Configuration() { // TODO: implement service configuration
+class onedriveConfigurationTest : io.dropwizard.Configuration() { // TODO: implement service configuration
+    fun test(){ }
 }
