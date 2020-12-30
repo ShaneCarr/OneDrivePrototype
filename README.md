@@ -6,7 +6,7 @@ How to start the onedrive application
 1. Run `mvn clean install` to build your application
 1. Start application with `java -jar target/onedrive-1.0-SNAPSHOT.jar server app.yml`
 1. To check that your application is running enter url `http://localhost:8080`
-
+ java -jar target/app.jar server app.yml
 Health Check
 ---
 
