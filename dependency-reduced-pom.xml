@@ -106,9 +106,9 @@
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>com.codahale.metrics</groupId>
+        <groupId>io.dropwizard.metrics</groupId>
         <artifactId>metrics-core</artifactId>
-        <version>${dropwizard.metrics.version}</version>
+        <version>4.1.16</version>
       </dependency>
       <dependency>
         <groupId>io.dropwizard</groupId>
@@ -143,7 +143,7 @@
     <ws.version>2.1.1</ws.version>
     <jar.finalName>app</jar.finalName>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <dropwizard.metrics.version>3.0.2</dropwizard.metrics.version>
+    <dropwizard.metrics.version>4.1.16</dropwizard.metrics.version>
     <maven.compiler.target>1.8</maven.compiler.target>
     <kotlin.code.style>official</kotlin.code.style>
     <jackson.annotations>2.11.0</jackson.annotations>

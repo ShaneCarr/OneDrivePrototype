@@ -19,7 +19,7 @@
         <dropwizard.version>2.0.17</dropwizard.version>
         <kotlin.version>1.4.21</kotlin.version>
         <kotlin.code.style>official</kotlin.code.style>
-        <dropwizard.metrics.version>3.0.2</dropwizard.metrics.version>
+        <dropwizard.metrics.version>4.1.16</dropwizard.metrics.version>
         <ws.version>2.1.1</ws.version>
         <jackson.annotations>2.11.0</jackson.annotations>
         <mainClass>onedrive.OnedriveApplication</mainClass>
@@ -54,11 +54,17 @@
                 <scope>import</scope>
                 <version>${dropwizard.version}</version>
             </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.codahale.metrics</groupId>-->
+<!--                <artifactId>metrics-core</artifactId>-->
+<!--                <version>${dropwizard.metrics.version}</version>-->
+<!--            </dependency>-->
             <dependency>
-                <groupId>com.codahale.metrics</groupId>
+                <groupId>io.dropwizard.metrics</groupId>
                 <artifactId>metrics-core</artifactId>
-                <version>${dropwizard.metrics.version}</version>
+                <version>4.1.16</version>
             </dependency>
+
             <dependency>
                 <groupId>io.dropwizard</groupId>
                 <artifactId>dropwizard-core</artifactId>
@@ -101,11 +107,15 @@
             <artifactId>kotlin-test</artifactId>
             <scope>test</scope>
         </dependency>
-
         <dependency>
-            <groupId>com.codahale.metrics</groupId>
+            <groupId>io.dropwizard.metrics</groupId>
             <artifactId>metrics-core</artifactId>
+            <version>4.1.16</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.codahale.metrics</groupId>-->
+<!--            <artifactId>metrics-core</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
