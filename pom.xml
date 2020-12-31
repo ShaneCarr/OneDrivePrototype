@@ -112,10 +112,6 @@
             <artifactId>metrics-core</artifactId>
             <version>4.1.16</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.codahale.metrics</groupId>-->
-<!--            <artifactId>metrics-core</artifactId>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
@@ -140,7 +136,8 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <!-- fair it increases build time but sure is convenient.-->
+                <!--  it increases build time but sure is convenient to just use shade.
+                for a prototype i don't need to worry about this, but the output folders are certainly a better pattern.-->
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.2.4</version>
                 <configuration>
@@ -177,7 +174,6 @@
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <version>${kotlin.version}</version>
-
                 <executions>
                     <execution>
                         <id>compile</id>
@@ -197,111 +193,4 @@
             </plugin>
         </plugins>
     </build>
-<!--    <build>-->
-<!--        <finalName>app</finalName>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <artifactId>maven-jar-plugin</artifactId>-->
-<!--                <version>3.2.0</version>-->
-<!--                <configuration>-->
-<!--                    <archive>-->
-<!--                        <manifest>-->
-<!--                            <addClasspath>true</addClasspath>-->
-<!--                            <mainClass>${mainClass}</mainClass>-->
-<!--                        </manifest>-->
-<!--                    </archive>-->
-
-<!--                </configuration>-->
-<!--            </plugin>-->
-<!--            <plugin>-->
-<!--                <groupId>org.jetbrains.kotlin</groupId>-->
-<!--                <artifactId>kotlin-maven-plugin</artifactId>-->
-<!--                <version>${kotlin.version}</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>compile</id>-->
-<!--                        <phase>compile</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>compile</goal>-->
-<!--                        </goals>-->
-<!--                        <configuration>-->
-<!--                            <sourceDirs>-->
-<!--                                <source>src/main/kotlin</source>-->
-<!--                                <source>src/main/java</source>-->
-<!--                            </sourceDirs>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                    <execution>-->
-<!--                        <id>test-compile</id>-->
-<!--                        <phase>test-compile</phase>-->
-<!--                        <goals> <goal>test-compile</goal> </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--                <configuration>-->
-<!--                    <jvmTarget>1.8</jvmTarget>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-compiler-plugin</artifactId>-->
-<!--                <version>3.7.0</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>default-compile</id>-->
-<!--                        <phase>none</phase>-->
-<!--                    </execution>-->
-<!--                    <execution>-->
-<!--                        <id>default-testCompile</id>-->
-<!--                        <phase>none</phase>-->
-<!--                    </execution>-->
-<!--                    <execution>-->
-<!--                        <id>compile</id>-->
-<!--                        <phase>compile</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>compile</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                    <execution>-->
-<!--                        <id>testCompile</id>-->
-<!--                        <phase>test-compile</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>testCompile</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
-
-<!--    <reporting>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <artifactId>maven-project-info-reports-plugin</artifactId>-->
-<!--                <version>3.1.0</version>-->
-<!--                <configuration>-->
-<!--                    <dependencyLocationsEnabled>false</dependencyLocationsEnabled>-->
-<!--                    <dependencyDetailsEnabled>false</dependencyDetailsEnabled>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
-<!--            <plugin>-->
-<!--                <artifactId>maven-javadoc-plugin</artifactId>-->
-<!--                <version>3.2.0</version>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </reporting>-->
-<!--    <profiles>-->
-<!--        <profile>-->
-<!--            <id>java11+</id>-->
-<!--            <activation>-->
-<!--                <jdk>[11,)</jdk>-->
-<!--            </activation>-->
-<!--            <properties>-->
-<!--                &lt;!&ndash;-->
-<!--                Workaround for "javadoc: error - The code being documented uses modules but the packages-->
-<!--                defined in https://docs.oracle.com/javase/8/docs/api/ are in the unnamed module."-->
-<!--                &ndash;&gt;-->
-<!--                <maven.javadoc.skip>true</maven.javadoc.skip>-->
-<!--            </properties>-->
-<!--        </profile>-->
-<!--    </profiles>-->
 </project>

@@ -1,0 +1,21 @@
+upstream filemigration {
+    server 127.0.0.1:9090;
+}
+
+log_format filemigration '$remote_addr - - [$time_local] "$request" $status - N/$request_time "$http_referer" "$http_user_agent" - "upstream_request_status=$upstream_status;upstream_response_time=$upstream_response_time;upstream_connect_time=$upstream_connect_time;upstream_header_time=$upstream_header_time;" - "x_request_id=$upstream_http_x_request_id;correlation_id=$upstream_http_x_correlation_id;trace_id=$http_x_b3_traceid;span_id=$http_x_b3_spanid"';
+
+server {
+  listen 8080;
+  listen [::]:8080;
+
+  access_log /home/app-user/logs/nginx-access.log filemigration;
+  error_log /home/app-user/logs/nginx-error.log;
+
+  location / {
+    proxy_connect_timeout 5s;
+    proxy_read_timeout 10s;
+    proxy_http_version 1.1;
+    proxy_set_header Connection "";
+    proxy_pass http://filemigration;
+   }
+}

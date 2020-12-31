@@ -1,0 +1,77 @@
+version: '3'
+
+services:
+  filemigration:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+      args:
+        APP_FILENAME: app.jar
+        OWN_LIBS_NAME: own_libs
+        LIBS_NAME: libs
+    environment:
+      - YAMMER_DEV_MODE=TRUE # This is required to start the docker container in your local environment
+      - YAMANALYTICS_URL=
+      - VENT_URL=
+      - AZURE_CLOUD_STORAGE_ACCOUNT_NAME=PLACEHOLDER
+      - AZURE_CLOUD_STORAGE_ACCOUNT_SAS_TOKEN=PLACEHOLDER
+      - FILE_MIGRATION_APP_CERTIFICATE_FILE=/home/app-user/_conf/FILEMIGRATION_YAMMER_PRINCIPAL_CERT_P12_FILE
+      - AAD_URL=https://login.windows-ppe.net
+      - EVENT_MANAGER_URL=
+      - CHIPPER_URL=http://localhost
+      - DIRECTORY_URL=http://localhost
+      - GROUPER_URL=http://localhost
+      - PERSONA_URL=http://localhost
+      - FILES_URL=https://localhost
+      - FILEVILLE_URL=https://localhost
+      - VENTSINKNONSLA_URL=https://localhost
+      - FILEMIGRATION_DIRECTORY_TOKEN=PLACEHOLDER
+      - FILEMIGRATION_PERSONA_TOKEN=PLACEHOLDER
+      - FILEMIGRATION_FILEVILLE_TOKEN=PLACEHOLDER
+      - FILEMIGRATION_FILES_TOKEN=PLACEHOLDER
+      - BOUNCIE_MASTER_URL=postgres:5432
+      - FILEMIGRATION_DB_NAME=filemigrationdb
+      - FILEMIGRATION_DB_USER=filemigrationuser
+      - FILEMIGRATION_DB_PW=development_token
+      - WORKFEED_INTERNAL_API_URL=https://localhost
+      - FILEMIGRATION_WORKFEED_KEY=PLACEHOLDER
+      - FILEMIGRATION_WORKFEED_SECRET=PLACEHOLDER
+      - LOG_LEVEL=INFO
+      - GIT_SHA=private-build
+      - REGION=local
+      - HOST=local
+      - PORTS=local
+      - PORT=local
+      - CELL=local
+      - PRE_JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
+      - RUN_MIGRATION=y # This is checked in start.sh to run the DB migrations locally
+      - TRACIE_COLLECTOR_URL=http://localhost:9411
+      - DT_SAMPLING_RATE=0
+      - SIMULATE_FILE_RENAMING=false
+      - ENABLE_FILE_RENAMING=true
+      - RENAME_USING_FILE_ID=false
+      - NETWORKS_FORCED_TO_RENAME=[]
+    ports:
+      - "9090:9090" # App port
+      - "8080:8080" # Nginx port
+      - "8081:8081" # Admin port
+      - "5005:5005" # Remote debug port
+    volumes:
+      - ./test-secret.txt:/home/app-user/test-secret.txt
+      - ./logs:/home/app-user/logs
+    stdin_open: true
+    tty: true
+    expose:
+      - "8080" # Nginx port
+      - "8081" # Admin port
+    links:
+      - postgres:postgres
+
+  postgres:
+    image: postgres:9.6-alpine
+    environment:
+      - POSTGRES_DB=filemigrationdb
+      - POSTGRES_USER=filemigrationuser
+      - POSTGRES_PASSWORD=development_token
+    ports:
+      - "5432:5432"

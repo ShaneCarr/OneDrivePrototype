@@ -10,13 +10,14 @@ import javax.ws.rs.QueryParam
 import javax.ws.rs.core.MediaType
 import onedrive.api.Ping
 
-@Path("/hello-world")
+@Path("/OneDriveManagement")
 @Produces(MediaType.APPLICATION_JSON)
-class HelloWorldResource(private val template: String, private val defaultName: String) {
+class OneDriveManagementResource(private val template: String, private val defaultName: String) {
     private val counter: AtomicLong = AtomicLong()
 
     @GET
     @Timed
+    @Path("sayHello")
     fun sayHello(@QueryParam("name") name: Optional<String?>): Ping {
         val value = String.format(template, name.orElse(defaultName))
         return Ping(counter.incrementAndGet(), value)
