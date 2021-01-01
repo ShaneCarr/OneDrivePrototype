@@ -6,17 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1382db20-be82-4604-aebd-7b40d238c588" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/onedrive/OnedriveApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/onedrive/OnedriveApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/onedrive/resources/OneDriveResource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/onedrive/resources/OneDriveManagementResource.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/app copy/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/app copy/META-INF/maven/onedrive/onedrive/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/app copy/META-INF/maven/onedrive/onedrive/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/app copy/META-INF/onedrive.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/app copy/banner.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,19 +47,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="onedrive [package]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -116,7 +92,8 @@
       <workItem from="1608764616305" duration="1222000" />
       <workItem from="1608766340502" duration="228000" />
       <workItem from="1608766651176" duration="10407000" />
-      <workItem from="1609100181874" duration="17961000" />
+      <workItem from="1609100181874" duration="18551000" />
+      <workItem from="1609467888041" duration="21000" />
     </task>
     <servers />
   </component>
