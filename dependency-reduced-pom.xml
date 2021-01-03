@@ -106,6 +106,11 @@
         <scope>import</scope>
       </dependency>
       <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20201115</version>
+      </dependency>
+      <dependency>
         <groupId>io.dropwizard.metrics</groupId>
         <artifactId>metrics-core</artifactId>
         <version>4.1.16</version>
@@ -136,17 +141,17 @@
     </dependencies>
   </dependencyManagement>
   <properties>
-    <dropwizard.version>2.0.17</dropwizard.version>
-    <kotlin.version>1.4.21</kotlin.version>
-    <mainClass>onedrive.OnedriveApplication</mainClass>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <ws.version>2.1.1</ws.version>
-    <jar.finalName>app</jar.finalName>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <dropwizard.metrics.version>4.1.16</dropwizard.metrics.version>
-    <maven.compiler.target>1.8</maven.compiler.target>
     <kotlin.code.style>official</kotlin.code.style>
+    <mainClass>onedrive.OnedriveApplication</mainClass>
     <jackson.annotations>2.11.0</jackson.annotations>
+    <jar.finalName>app</jar.finalName>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <dropwizard.version>2.0.17</dropwizard.version>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <kotlin.version>1.4.21</kotlin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <ws.version>2.1.1</ws.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <dropwizard.metrics.version>4.1.16</dropwizard.metrics.version>
   </properties>
 </project>

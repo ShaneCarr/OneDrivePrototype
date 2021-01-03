@@ -14,7 +14,7 @@ ARG LIBS_NAME=libs
 # example -cp (class path) app.jar:libs/*:own_libs/*:.
 # app jar, ownlibs, current path and libs. note data is '.' the last item.
 # ned to add data to class path hence . so when we get to the  the CMD [...] below everything needed is in the classpath.
-ENV ADD_JAVA_OPTS="-cp ${APP_FILENAME}:${LIBS_NAME}/*:${OWN_LIBS_NAME}/*:."
+ENV ADD_JAVA_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005 -cp ${APP_FILENAME}:${LIBS_NAME}/*:${OWN_LIBS_NAME}/*:."
 ENV JAVA_ENTRY_CLASS_NAME=onedrive.OnedriveApplication
 
 
