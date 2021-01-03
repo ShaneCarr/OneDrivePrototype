@@ -7,6 +7,7 @@
     <list default="true" id="1382db20-be82-4604-aebd-7b40d238c588" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +145,7 @@
       <workItem from="1609617797551" duration="2518000" />
       <workItem from="1609623608868" duration="513000" />
       <workItem from="1609624151746" duration="3826000" />
-      <workItem from="1609631212621" duration="4014000" />
+      <workItem from="1609631212621" duration="5381000" />
     </task>
     <servers />
   </component>
@@ -200,6 +201,16 @@
           <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
           <line>60</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
+          <line>47</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
+          <line>43</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

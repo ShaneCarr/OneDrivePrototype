@@ -36,7 +36,7 @@ class OneDriveClient {
         redirectUri: String,
         clientsecret: String
     ): String? {
-        val urlForAccessToken = URL(baseUrl + "token")
+        val urlForAccessToken = URL(baseUrl)
         var readLine: String? = null
         var responseCode = 0
         var accesstoken: String? = null
