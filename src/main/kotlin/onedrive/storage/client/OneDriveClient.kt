@@ -2,23 +2,27 @@ package onedrive.storage.client
 
 import java.io.InputStreamReader
 
-import java.io.IOException
 import java.io.OutputStream
 import java.net.HttpURLConnection
 import java.io.BufferedReader;
-import java.io.File;
 import java.net.URL;
-import org.json.JSONException;
 import org.json.JSONObject;
 
+/*
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded"
+-d 'client_id=88a3f5b1-e2c9-4721-b686-a92295c77b14&
+scope=https%3A%2F%2Fbrandyleeloo-my.sharepoint.com%2F.default&
+client_secret=aR-e.5G7uxSOx1O68-wEP6_2yRQo91h2xH&
+grant_type=client_credentials' 'https://login.microsoftonline.com/8d2ae17d-e352-493c-acaa-41720ca2ea9b/oauth2/v2.0/token'
+ */
 class OneDriveClient {
     // todo stick in companion / static
     var clientid = "88a3f5b1-e2c9-4721-b686-a92295c77b14"
     var clientsecret = "aR-e.5G7uxSOx1O68-wEP6_2yRQo91h2xH"
-    var baseUrl = "https://login.microsoft.com/common/oauth2/v2.0/"
-    var authorizationCode = "client_credentials"
+    var baseUrl = "https://login.microsoftonline.com/8d2ae17d-e352-493c-acaa-41720ca2ea9b/oauth2/v2.0/token"
+    var grantType = "client_credentials"
     var redirectUri = "http://localhost:8080/shcarr/login"
-    var scope = "onedrive.readwrite"
+    var scope = "https%3A%2F%2Fbrandyleeloo-my.sharepoint.com%2F.default"
     var readLine: String? = null
     var accesstoken: String? = null
     var responseCode = 0
@@ -41,11 +45,11 @@ class OneDriveClient {
         conection.setRequestMethod("POST")
         conection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded")
         conection.setDoOutput(true)
-        val str =
-            "client_id=$clientid&redirect_uri=$redirectUri&client_secret=$clientsecret&grant_type=$authorizationCode"
+        val queryString =
+            "client_id=$clientid&redirect_uri=$redirectUri&client_secret=$clientsecret&grant_type=$grantType&scope=$scope"
 
         //send the above info in the body
-        val outputInBytes = str.toByteArray(charset("UTF-8"))
+        val outputInBytes = queryString.toByteArray(charset("UTF-8"))
         val os: OutputStream = conection.getOutputStream()
         os.write(outputInBytes)
         os.close()
