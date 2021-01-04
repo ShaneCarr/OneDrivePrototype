@@ -138,7 +138,8 @@
       <workItem from="1609624151746" duration="3826000" />
       <workItem from="1609631212621" duration="5381000" />
       <workItem from="1609710792107" duration="6870000" />
-      <workItem from="1609723322757" duration="7604000" />
+      <workItem from="1609723322757" duration="8610000" />
+      <workItem from="1609779155922" duration="4605000" />
     </task>
     <servers />
   </component>
@@ -162,96 +163,40 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>60</line>
-          <option name="timeStamp" value="1" />
+          <line>125</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>77</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>90</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>92</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>86</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>82</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>69</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>65</line>
-          <option name="timeStamp" value="9" />
+          <line>117</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/resources/OneDriveManagementResource.kt</url>
-          <line>28</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/resources/OneDriveManagementResource.kt</url>
-          <line>40</line>
-          <option name="timeStamp" value="11" />
+          <line>34</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>116</line>
-          <option name="timeStamp" value="12" />
+          <line>126</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>122</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>123</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>132</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>124</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>130</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>63</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>72</line>
-          <option name="timeStamp" value="19" />
+          <line>93</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Remote">
+        <watch expression="exception" language="kotlin" />
+        <watch expression="it.body" />
+        <watch expression="request" />
+        <watch expression="this.getAccessToken()" />
+        <watch expression="accesstoken" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

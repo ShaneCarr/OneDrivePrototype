@@ -43,7 +43,9 @@ class OneDriveClient {
     var baseUrl = "https://login.microsoftonline.com/8d2ae17d-e352-493c-acaa-41720ca2ea9b/oauth2/v2.0/token"
     var grantType = "client_credentials"
     var redirectUri = "http://localhost:8080/shcarr/login"
-    var scope = "https%3A%2F%2Fbrandyleeloo-my.sharepoint.com%2F.default"
+    //var scope = "https%3A%2F%2Fbrandyleeloo-my.sharepoint.com%2F.default"
+    //var scope = "https%3A%2F%2Fgraph.microsoft.com%2F.default"
+    var scope = "https%3A%2F%2Fgraph.microsoft.com%2FFiles.ReadWrite.All"
     var readLine: String? = null
     var accesstoken: String? = null
     var responseCode = 0
@@ -109,7 +111,6 @@ class OneDriveClient {
      * @return the folder or `null`
      */
      fun getFolder() : String {
-        try {
 
            // https://graph.microsoft.com/v1.0/me/drive/root:/
 
@@ -117,7 +118,8 @@ class OneDriveClient {
             val request: Request = Request.Builder()
                 .addHeader("Authorization", "Bearer " + this.getAccessToken())
               //  .url("https://brandyleeloo-my.sharepoint.com/personal/shanepcarr_brandyleeloo_onmicrosoft_com/_api/v2.0/drive/root:/$folderName")
-                .url("https://graph.microsoft.com/v1.0/me/drive/root:/onedrivetest") // attempt the graph endpoint having issues getting scopes for onedrive direct
+                //.url("https://graph.microsoft.com/v1.0/me/drive/root:/onedrivetest") // attempt the graph endpoint having issues getting scopes for onedrive direct
+                .url("https://brandyleeloo-my.sharepoint.com/personal/shanepcarr_brandyleeloo_onmicrosoft_com/_api/v2.0/drive/root:/onedrivetest")
                 .build()
 
             var parsedResponse: JSONObject
@@ -130,8 +132,6 @@ class OneDriveClient {
             //val folderName = jsonArray.getJSONObject(i).getString("name")
             return parsedResponse.get("id").toString()
 
-        } catch (exception: Exception) {
-        }
         return ""
     }
 

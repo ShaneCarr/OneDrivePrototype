@@ -53,3 +53,5 @@ curl 'http://localhost:8080/OneDriveManagement/sayHello' \
 
 https://login.microsoftonline.com/8d2ae17d-e352-493c-acaa-41720ca2ea9b/oauth2/v2.0/token
 https://login.microsoftonline.com/8d2ae17d-e352-493c-acaa-41720ca2ea9b/oauth2/v2.0/token?client_id=88a3f5b1-e2c9-4721-b686-a92295c77b14&redirect_uri=http://localhost:8080/shcarr/login&client_secret=aR-e.5G7uxSOx1O68-wEP6_2yRQo91h2xH&grant_type=client_credentials&scope=https%3A%2F%2Fbrandyleeloo-my.sharepoint.com%2F.default
+
+curl -d "grant_type=client_credentials&client_id=88a3f5b1-e2c9-4721-b686-a92295c77b14&client_secret=aR-e.5G7uxSOx1O68-wEP6_2yRQo91h2xH&audience=api%3A%2F%2F06b2a484-141c-42d3-9d73-32bec5910b06&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default" -X POST "https://login.microsoftonline.com/8d2ae17d-e352-493c-acaa-41720ca2ea9b/oauth2/v2.0/token"

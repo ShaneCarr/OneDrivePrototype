@@ -26,9 +26,15 @@ class OneDriveManagementResource(private val template: String, private val defau
     @Path("sayHello")
     fun sayHello(@QueryParam("name") name: Optional<String?>): Ping {
         var value = String.format(template, name.orElse(defaultName))
-        val onedriveclient = OneDriveClient()
-        value += onedriveclient.getAccessToken()
-        value += onedriveclient.getFolder()
+        try {
+            val onedriveclient = OneDriveClient()
+            value += onedriveclient.getAccessToken()
+            value += onedriveclient.getFolder()
+        }catch (exception: Exception)
+        {
+            value += exception.toString()
+        }
+
         return Ping(counter.incrementAndGet(), value)
     }
 
