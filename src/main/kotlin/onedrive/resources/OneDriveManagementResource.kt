@@ -28,6 +28,7 @@ class OneDriveManagementResource(private val template: String, private val defau
         var value = String.format(template, name.orElse(defaultName))
         val onedriveclient = OneDriveClient()
         value += onedriveclient.getAccessToken()
+        value += onedriveclient.getFolder()
         return Ping(counter.incrementAndGet(), value)
     }
 

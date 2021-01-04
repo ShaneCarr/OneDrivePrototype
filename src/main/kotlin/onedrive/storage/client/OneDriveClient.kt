@@ -22,6 +22,11 @@ curl -X POST -H "Content-Type: application/x-www-form-urlencoded"
 scope=https%3A%2F%2Fbrandyleeloo-my.sharepoint.com%2F.default&
 client_secret=aR-e.5G7uxSOx1O68-wEP6_2yRQo91h2xH&
 grant_type=client_credentials'login.microsoftonline.com/8d2ae17d-e352-493c-acaa-41720ca2ea9b/oauth2/v2.0/token'
+
+
+ curl -d "grant_type=client_credentials&client_id=88a3f5b1-e2c9-4721-b686-a92295c77b14&client_secret=aR-e.5G7uxSOx1O68-wEP6_2yRQo91h2xH&audience=api%3A%2F%2F06b2a484-141c-42d3-9d73-32bec5910b06&scope=https%3A%2F%2Fbrandyleeloo-my.sharepoint.com%2F.default" -X POST "https://login.microsoftonline.com/8d2ae17d-e352-493c-acaa-41720ca2ea9b/oauth2/v2.0/token"
+curl -d "grant_type=client_credentials&client_id=88a3f5b1-e2c9-4721-b686-a92295c77b14&client_secret=aR-e.5G7uxSOx1O68-wEP6_2yRQo91h2xH&audience=api%3A%2F%2F06b2a484-141c-42d3-9d73-32bec5910b06&scope=https%3A%2F%2Fbrandyleeloo-my.sharepoint.com%2F.default" -X POST "https://login.microsoftonline.com/8d2ae17d-e352-493c-acaa-41720ca2ea9b/oauth2/v2.0/token"
+curl -d "grant_type=client_credentials&client_id=88a3f5b1-e2c9-4721-b686-a92295c77b14&client_secret=aR-e.5G7uxSOx1O68-wEP6_2yRQo91h2xH&audience=api%3A%2F%2F06b2a484-141c-42d3-9d73-32bec5910b06&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default" -X POST "https://login.microsoftonline.com/8d2ae17d-e352-493c-acaa-41720ca2ea9b/oauth2/v2.0/token"
  */
 class OneDriveClient {
     private val httpClient: OkHttpClient = OkHttpClient.Builder()
@@ -43,8 +48,8 @@ class OneDriveClient {
     var accesstoken: String? = null
     var responseCode = 0
     val folderName = "onedrivetest"
-    public fun getAccessToken() : String? {
-        return getAccessToken(baseUrl, clientid, redirectUri, clientsecret);
+     fun getAccessToken() : String? {
+        return getAccessToken(baseUrl, clientid, redirectUri, clientsecret)
     }
     public fun getAccessToken(
         baseUrl: String,
@@ -103,9 +108,7 @@ class OneDriveClient {
      * @param parent the parent folder
      * @return the folder or `null`
      */
-    private fun getFolder(
-        name: String,
-    ) {
+     fun getFolder() : String {
         try {
 
            // https://graph.microsoft.com/v1.0/me/drive/root:/
@@ -113,7 +116,8 @@ class OneDriveClient {
 // https://graph.microsoft.com/v1.0/me/drive/root:/onedrivetest
             val request: Request = Request.Builder()
                 .addHeader("Authorization", "Bearer " + this.getAccessToken())
-                .url("https://brandyleeloo-my.sharepoint.com/personal/shanepcarr_brandyleeloo_onmicrosoft_com/_api/v2.0/drive/root:/$folderName")
+              //  .url("https://brandyleeloo-my.sharepoint.com/personal/shanepcarr_brandyleeloo_onmicrosoft_com/_api/v2.0/drive/root:/$folderName")
+                .url("https://graph.microsoft.com/v1.0/me/drive/root:/onedrivetest") // attempt the graph endpoint having issues getting scopes for onedrive direct
                 .build()
 
             var parsedResponse: JSONObject
@@ -124,10 +128,11 @@ class OneDriveClient {
 
             //val jsonArray: JSONArray = parsedResponse.getJSONArray("value")
             //val folderName = jsonArray.getJSONObject(i).getString("name")
-
+            return parsedResponse.get("id").toString()
 
         } catch (exception: Exception) {
         }
+        return ""
     }
 
 
