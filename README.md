@@ -31,3 +31,7 @@ debugging
 ---
 
 To see your applications health enter url `http://localhost:8081/healthcheck`
+
+
+Maven tips
+- pull dependencies for offline: mvn dependency:go-offline
