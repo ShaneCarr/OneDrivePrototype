@@ -43,9 +43,11 @@ class OneDriveClient {
     var baseUrl = "https://login.microsoftonline.com/8d2ae17d-e352-493c-acaa-41720ca2ea9b/oauth2/v2.0/token"
     var grantType = "client_credentials"
     var redirectUri = "http://localhost:8080/shcarr/login"
-    //var scope = "https%3A%2F%2Fbrandyleeloo-my.sharepoint.com%2F.default"
-    //var scope = "https%3A%2F%2Fgraph.microsoft.com%2F.default"
-    var scope = "https%3A%2F%2Fgraph.microsoft.com%2FFiles.ReadWrite.All"
+    // var scope = "https%3A%2F%2Fbrandyleeloo-my.sharepoint.com%2FFiles.ReadWrite.All"
+    //var scope = "https%3A%2F%2Fbrandyleeloo-my.sharepoint.com%2FSites.FullControl.All"
+
+    var scope = "https%3A%2F%2Fgraph.microsoft.com%2F.default"
+    //var scope = "https%3A%2F%2Fgraph.microsoft.com%2FFiles.ReadWrite.All"
     var readLine: String? = null
     var accesstoken: String? = null
     var responseCode = 0
@@ -53,7 +55,7 @@ class OneDriveClient {
      fun getAccessToken() : String? {
         return getAccessToken(baseUrl, clientid, redirectUri, clientsecret)
     }
-    public fun getAccessToken(
+    fun getAccessToken(
         baseUrl: String,
         clientid: String,
         redirectUri: String,
@@ -95,22 +97,11 @@ class OneDriveClient {
     }
 
 
-    /**
-     * Uploads the specified file to the authenticated user's OneDrive inside a folder for the specified file type
-     * @param file the file
-     * @param type the type of file (ex. plugins, world)
-     */
     fun uploadFile(file: File, type: String) {
 
     }
 
-    /**
-     * Returns the folder in the specified parent folder of the authenticated user's OneDrive with the specified name
-     * @param name the name of the folder
-     * @param parent the parent folder
-     * @return the folder or `null`
-     */
-     fun getFolder() : String {
+     fun getChildren() : String {
 
            // https://graph.microsoft.com/v1.0/me/drive/root:/
 
@@ -119,12 +110,13 @@ class OneDriveClient {
                 .addHeader("Authorization", "Bearer " + this.getAccessToken())
               //  .url("https://brandyleeloo-my.sharepoint.com/personal/shanepcarr_brandyleeloo_onmicrosoft_com/_api/v2.0/drive/root:/$folderName")
                 //.url("https://graph.microsoft.com/v1.0/me/drive/root:/onedrivetest") // attempt the graph endpoint having issues getting scopes for onedrive direct
-                .url("https://brandyleeloo-my.sharepoint.com/personal/shanepcarr_brandyleeloo_onmicrosoft_com/_api/v2.0/drive/root:/onedrivetest")
+               // .url("https://brandyleeloo-my.sharepoint.com/personal/shanepcarr_brandyleeloo_onmicrosoft_com/_api/v2.0/drive/root:/onedrivetest")
+                .url("https://graph.microsoft.com/v1.0/users('483fcfa8-4ec1-423c-b5e1-aeb998381099')/drive/root/children")
                 .build()
 
             var parsedResponse: JSONObject
            httpClient.newCall(request).execute().use {
-                 parsedResponse = JSONObject(it.body.toString())
+                 parsedResponse = JSONObject(it.body!!.string())
             }
 
 
@@ -135,6 +127,38 @@ class OneDriveClient {
         return ""
     }
 
+    fun getFolder() : String {
+        val request: Request = Request.Builder()
+            .addHeader("Authorization", "Bearer " + this.getAccessToken())
+            .url("https://graph.microsoft.com/v1.0/users('483fcfa8-4ec1-423c-b5e1-aeb998381099')/drive/root:/onedrivetest")
+            .build()
+
+        var parsedResponse: JSONObject
+        httpClient.newCall(request).execute().use {
+            parsedResponse = JSONObject(it.body!!.string())
+        }
+
+        return parsedResponse.get("id").toString()
+
+        return ""
+    }
+
+
+    fun getLink() : String {
+        val request: Request = Request.Builder()
+            .addHeader("Authorization", "Bearer " + this.getAccessToken())
+            .url("https://graph.microsoft.com/v1.0/users('483fcfa8-4ec1-423c-b5e1-aeb998381099')/drive/root:/onedrivetest")
+            .build()
+
+        var parsedResponse: JSONObject
+        httpClient.newCall(request).execute().use {
+            parsedResponse = JSONObject(it.body!!.string())
+        }
+
+        return parsedResponse.get("id").toString()
+
+        return ""
+    }
 
 }
 

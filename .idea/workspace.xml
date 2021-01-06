@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1382db20-be82-4604-aebd-7b40d238c588" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/onedrive/resources/OneDriveManagementResource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/onedrive/resources/OneDriveManagementResource.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/onedrive.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +138,7 @@
       <workItem from="1609631212621" duration="5381000" />
       <workItem from="1609710792107" duration="6870000" />
       <workItem from="1609723322757" duration="8610000" />
-      <workItem from="1609779155922" duration="4605000" />
+      <workItem from="1609779155922" duration="14527000" />
     </task>
     <servers />
   </component>
@@ -163,12 +162,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>125</line>
+          <line>117</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>117</line>
+          <line>108</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
@@ -178,23 +177,24 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>126</line>
+          <line>118</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
-          <line>93</line>
+          <line>95</line>
           <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/onedrive/storage/client/OneDriveClient.kt</url>
+          <line>73</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Remote">
-        <watch expression="exception" language="kotlin" />
-        <watch expression="it.body" />
-        <watch expression="request" />
-        <watch expression="this.getAccessToken()" />
-        <watch expression="accesstoken" />
+        <watch expression="it.body.string()" language="kotlin" />
       </configuration>
     </watches-manager>
   </component>
